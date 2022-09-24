@@ -7,4 +7,9 @@
 body{
   background-color: #373232;
   color: #efe;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+li{
+  list-style: none;
 }
