@@ -14,7 +14,38 @@ import { useState } from 'react';
 
 const Login = () => {
 
+  // show and hide container of register user
   const [toggle, setToggle] = useState(false);
+
+  // form control
+  const [displayName, setDisplayName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [ConfirmPassword, setConfirmPassword] = useState("");
+
+  // error
+  const [error, setError] = useState("");
+
+  // method submit
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    setError("");
+
+    const user = {
+      displayName,
+      email,
+      password
+    }
+
+    if (password !== ConfirmPassword) {
+      setError("As senhas precisam ser iguais!")
+      return;
+    }
+
+    console.log(user);
+
+  }
 
   return (
     <>
@@ -44,31 +75,40 @@ const Login = () => {
             <p>Sem complicações.</p>
             <button onClick={() => setToggle(!toggle)}><FontAwesomeIcon icon={faXmarkCircle} /></button>
           </div>
-          <form>
+          <form onSubmit={handleSubmit}>
             <input 
             type="text"
             name='displayName'
             placeholder='Nome' 
+            value={displayName}
+            onChange={(e) => setDisplayName(e.target.value)}
             required
             />
             <input 
             type="email"
             name='email'
             placeholder='email' 
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
             />
             <input 
             type="password"
             name='password'
             placeholder='Nova Senha' 
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             required
             />
             <input 
             type="password"
             name='ConfirmPassword'
             placeholder='Confirme a sua senha' 
+            value={ConfirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
             required
             />
+            {error && <p className={styles.error}>{error}</p>}
             <button>Cadastre-se</button>
           </form>
         </div>

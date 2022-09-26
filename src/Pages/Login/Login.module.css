@@ -186,7 +186,7 @@
     height: 43px;
     width: 402px;
     border-radius: 10px;    
-    margin: 20px;
+    margin: 15px;
     padding: 10px;
     background: #F5F6F7;
     border: 1px solid;
@@ -198,4 +198,11 @@
     border-radius: 10px;
     margin-left: 4em;
     border: none;
+}
+
+/* error */
+.error{
+    background: #E12D2D;
+    margin: 10px;
+    text-align: center;
 }
