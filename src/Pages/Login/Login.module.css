@@ -39,27 +39,32 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.frameBottom:hover{
-    background-color: #cb4f11;
+    border: 5px solid #8F5F30;
 }
 
 .frameBottom button{
     border: none;
     padding: 20px;
     cursor: pointer;
-    background-color: transparent;
+    background: #8F5F30;
+    border: none;
     font-size: 1.6em;
+}
+
+.frameBottom button:hover{
+    background-color: #cb4f11;
+    border: 2px solid #cb4f11;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
 }
 
 .frameBottom button:hover{
     color: #E6E3E3;
 }
 
-/* Form */
+/* Form Login */
 
-.registerForm{
+.loginForm{
     height: 369px;
     width: 409px;
     border-radius: 12px;
@@ -67,12 +72,12 @@
     background: #FFFFFFD9;
 }
 
-.registerForm form{
+.loginForm form{
     display: flex;
     flex-direction: column;
 }
 
-.registerForm form input{
+.loginForm form input{
     height: 54px;
     width: 364px;
     border-radius: 12px;
@@ -80,18 +85,18 @@
     margin: 20px;
 }
 
-.registerForm form input[type="email"]{
+.loginForm form input[type="email"]{
     margin-top: 5em;
     color: #8F5F30;
     padding-left: 20px;
 }
 
-.registerForm form input[type="password"]{
+.loginForm form input[type="password"]{
     color: #8F5F30;
     padding-left: 20px;
 }
 
-.registerForm form input[type="submit"]{
+.loginForm form input[type="submit"]{
     color: #E6E3E3;
     font-weight: 900;
     font-size: 1em;
@@ -99,17 +104,98 @@
     cursor: pointer;
 }
 
-.registerForm form input[type="submit"]:hover{
+.loginForm form input[type="submit"]:hover{
     background-color: #cb4f11;
     color: #fff;
 }
 
 /* Placeholders */
 
-.registerForm form input[type="email"]::placeholder{
+.loginForm form input[type="email"]::placeholder{
     padding: 20px;
 }
 
-.registerForm form input[type="password"]::placeholder{
+.loginForm form input[type="password"]::placeholder{
     padding: 20px;
+}
+
+
+/* Register Form */
+.registerFrame{
+    height: 500px;
+    width: 440px;
+    border-radius: 12px;
+    background: #FCFCFD;
+    box-shadow: 10px 7px 4px 3px #00000040;
+    position: absolute;
+    margin-bottom: 5em;
+    margin-top: 3em;
+    opacity: 0.80;
+    transition: 1s;
+}
+
+.registerForm{
+    width: 100%;
+    height: 85px;
+    position: relative;
+    background: #FCFCFD;
+    border-bottom: 1px solid #B4B9BD;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    color: black;
+}
+
+.registerForm p:first-child {
+    font-size: 30px;
+    font-weight: 500;
+    margin: 20px 20px 0;
+}
+
+.registerForm p {
+    font-size: 15px;
+    margin-left: 20px;
+}
+
+.registerForm button{
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.registerForm svg{
+    color: black;
+    font-size: 35px;
+}
+
+.registerForm svg:hover{
+    color: #B1ADAD;
+}
+
+/* Form of register */
+
+.registerFrame form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.registerFrame form input{
+    height: 43px;
+    width: 402px;
+    border-radius: 10px;    
+    margin: 20px;
+    padding: 10px;
+    background: #F5F6F7;
+    border: 1px solid;
+}
+
+.registerFrame form button{
+    height: 43px;
+    width: 300px;
+    border-radius: 10px;
+    margin-left: 4em;
+    border: none;
 }

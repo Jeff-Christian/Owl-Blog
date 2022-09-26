@@ -13,3 +13,16 @@ body{
 li{
   list-style: none;
 }
+
+button{
+    color: #E6E3E3;
+    font-weight: 900;
+    font-size: 1em;
+    background: #8F5F30;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #cb4f11;
+    color: #fff;
+}
