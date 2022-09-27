@@ -9,7 +9,8 @@ import { faXmarkCircle } from '@fortawesome/free-solid-svg-icons';
 import logoSocial from "../../images/logo-social.png";
 
 // Hooks
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useAuthentication } from '../../hooks/useAuthentication';
 
 
 const Login = () => {
@@ -23,11 +24,14 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [ConfirmPassword, setConfirmPassword] = useState("");
 
+  // hook authentication
+  const { createUser, error: authError, loading } = useAuthentication();
+
   // error
   const [error, setError] = useState("");
 
   // method submit
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     setError("");
@@ -43,9 +47,16 @@ const Login = () => {
       return;
     }
 
-    console.log(user);
+    const res = await createUser(user);
 
+    console.log(res);
   }
+
+  useEffect(() => {
+    if (authError) {
+      setError(authError);
+    }
+  }, [authError])
 
   return (
     <>
@@ -109,7 +120,8 @@ const Login = () => {
             required
             />
             {error && <p className={styles.error}>{error}</p>}
-            <button>Cadastre-se</button>
+            {!loading && <button>Cadastre-se</button> }
+            {loading &&  <button disabled>Por favor, Aguarde</button>}
           </form>
         </div>
       )}
