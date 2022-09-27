@@ -1,7 +1,7 @@
 import './App.css';
 
 // Router
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 // Context
 import { AuthProvider } from './context/AuthContext';
@@ -50,7 +50,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<Login></Login>}></Route>
-            <Route path='/home' element={<Home></Home>}></Route>
+            <Route path='/home' element={!user ? <Home></Home> : <Navigate to='/'/>}></Route>
             <Route path='/*' element={<NotFound></NotFound>}></Route>
           </Routes>
           <Footer></Footer>
