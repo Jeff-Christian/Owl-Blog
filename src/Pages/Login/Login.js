@@ -65,67 +65,67 @@ const Login = () => {
           <li><img src={logoSocial} alt="logo social" className={styles.logo} /></li>
         </ul>
       </nav>
-      <div className={styles.register}>
-        <div className={styles.newRegister}>
-          <FontAwesomeIcon icon={faUserPlus} />
-          <div className={styles.frameBottom}>
-          <button onClick={() => setToggle(!toggle)}>Cadastrar</button>
+      <main>
+        <div className={styles.register}>
+          <div className={styles.newRegister}>
+            <FontAwesomeIcon icon={faUserPlus} />
+            <button className={styles.frameBottom} onClick={() => setToggle(!toggle)}>Cadastrar</button>
           </div>
-        </div>
-        <div className={styles.loginForm}>
-          <form>
-            <input type="email" name="email" id="email" placeholder='Email' required/>
-            <input type="password" name="password" id="password" placeholder='Senha' required/>
-            <input type="submit" value="Entrar" />
-          </form>
-        </div>
-        {toggle && (
-        <div className={styles.registerFrame}>
-          <div className={styles.registerForm}>
-            <p>Cadastre-se</p>
-            <p>Sem complicações.</p>
-            <button onClick={() => setToggle(!toggle)}><FontAwesomeIcon icon={faXmarkCircle} /></button>
+          <div className={styles.loginForm}>
+            <form>
+              <input type="email" name="email" id="email" placeholder='Email' required/>
+              <input type="password" name="password" id="password" placeholder='Senha' required/>
+              <input type="submit" value="Entrar" />
+            </form>
           </div>
-          <form onSubmit={handleSubmit}>
-            <input 
-            type="text"
-            name='displayName'
-            placeholder='Nome' 
-            value={displayName}
-            onChange={(e) => setDisplayName(e.target.value)}
-            required
-            />
-            <input 
-            type="email"
-            name='email'
-            placeholder='email' 
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            />
-            <input 
-            type="password"
-            name='password'
-            placeholder='Nova Senha' 
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            />
-            <input 
-            type="password"
-            name='ConfirmPassword'
-            placeholder='Confirme a sua senha' 
-            value={ConfirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-            />
-            {error && <p className={styles.error}>{error}</p>}
-            {!loading && <button>Cadastre-se</button> }
-            {loading &&  <button disabled>Por favor, Aguarde</button>}
-          </form>
+          {toggle && (
+          <div className={styles.registerFrame}>
+            <div className={styles.registerForm}>
+              <p>Cadastre-se</p>
+              <p>Sem complicações.</p>
+              <button onClick={() => setToggle(!toggle)}><FontAwesomeIcon icon={faXmarkCircle} /></button>
+            </div>
+            <form onSubmit={handleSubmit}>
+              <input 
+              type="text"
+              name='displayName'
+              placeholder='Nome' 
+              value={displayName}
+              onChange={(e) => setDisplayName(e.target.value)}
+              required
+              />
+              <input 
+              type="email"
+              name='email'
+              placeholder='email' 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              />
+              <input 
+              type="password"
+              name='password'
+              placeholder='Nova Senha' 
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              />
+              <input 
+              type="password"
+              name='ConfirmPassword'
+              placeholder='Confirme a sua senha' 
+              value={ConfirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+              />
+              {error && <p className={styles.error}>{error}</p>}
+              {!loading && <button>Cadastre-se</button> }
+              {loading &&  <button disabled>Por favor, Aguarde</button>}
+            </form>
+          </div>
+        )}
         </div>
-      )}
-      </div>
+      </main>
     </>
   )
 }

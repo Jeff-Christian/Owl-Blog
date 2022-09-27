@@ -1,0 +1,49 @@
+.navBar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo{
+    width: 60%;
+}
+
+.navBar input{
+    height: 40px;
+    width: 320px;
+    border-radius: 100px;
+    padding-left: 30px;
+}
+
+.navBar input::placeholder{
+   padding: 20px;
+}
+
+.inputSearch{
+    position: relative;
+    margin-right: 10em;
+}
+
+.inputSearch svg{
+    position: absolute;
+    left: 10px;
+    bottom: 11px;
+    color: black;
+}
+
+.userArea{
+    margin-right: 4em;
+}
+
+.userArea svg{
+    font-size: 2em;
+}
+
+.userArea a{
+    margin-left: 20px;
+    color: #ffffff;
+}
+
+.userArea a:hover{
+    color: #cb4f11;
+}

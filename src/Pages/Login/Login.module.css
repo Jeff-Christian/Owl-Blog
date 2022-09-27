@@ -32,18 +32,19 @@
 .frameBottom{
     height: 83px;
     width: 182px;
-    background: #E6E3E3;
     border-radius: 0px 0px 12px 12px;
     position: absolute;
     bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 5px solid #8F5F30;
+    border: none;
+    background: #8F5F30;
+    font-size: 1.6em;
 }
 
 .frameBottom button{
-    border: none;
+    width: 100%;
     padding: 20px;
     cursor: pointer;
     background: #8F5F30;

@@ -5,7 +5,6 @@ footer{
     bottom: 0;
     background-color: #CB4F11;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
 }

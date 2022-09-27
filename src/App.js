@@ -45,18 +45,16 @@ function App() {
 
   return (
     <>
-    <div className='container'>
       <AuthProvider value={{user}}>
         <BrowserRouter>
           <Routes>
-            <Route path='/' element={<Login></Login>}></Route>
-            <Route path='/home' element={!user ? <Home></Home> : <Navigate to='/'/>}></Route>
+            <Route path='/' element={!user ? <Login></Login> : <Navigate to='/home'/>}></Route>
+            <Route path='/home' element={user ? <Home></Home> : <Navigate to='/'/>}></Route>
             <Route path='/*' element={<NotFound></NotFound>}></Route>
           </Routes>
           <Footer></Footer>
         </BrowserRouter>
       </AuthProvider>
-    </div>
     </>
   );
 }
