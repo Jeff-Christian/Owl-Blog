@@ -5,9 +5,11 @@
 }
 
 body{
+  height: 60vh;
   background-color: #373232;
   color: #efe;
   font-family: 'Noto Sans JP', sans-serif;
+  margin-bottom:2em;
 }
 
 a{

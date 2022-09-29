@@ -77,12 +77,14 @@ const Login = () => {
 
   return (
     <>
-      <nav>
+    
+      <nav className='container'>
         <ul>
           <li><img src={logoSocial} alt="logo social" className={styles.logo} /></li>
         </ul>
       </nav>
-      <main>
+
+      <main  className='container'>
         <div className={styles.register}>
           <div className={styles.newRegister}>
             <FontAwesomeIcon icon={faUserPlus} />
@@ -159,6 +161,7 @@ const Login = () => {
         )}
         </div>
       </main>
+
     </>
   )
 }
