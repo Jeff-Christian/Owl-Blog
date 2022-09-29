@@ -10,6 +10,7 @@ import logoSocial from "../../images/logo-social.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 // Hooks
 import { useAuthentication } from "../../hooks/useAuthentication";
@@ -29,11 +30,15 @@ const Home = () => {
           <FontAwesomeIcon icon={faSearch} />
           <input type="text" placeholder='Pesquisar posts' />
         </li>
-        <div class="dropdown">
-          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li className={styles.newPost}>
+          <FontAwesomeIcon icon={faPlus} />
+          <span id={styles.tooltipText}>O quê você quer postar?</span>
+        </li>
+        <div className="dropdown">
+          <button className="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <FontAwesomeIcon icon={faCircleUser} />
           </button>
-          <ul class="dropdown-menu">
+          <ul className="dropdown-menu">
             <li><Link onClick={logout} className="dropdown-item">Sair</Link></li>
           </ul>
         </div>
