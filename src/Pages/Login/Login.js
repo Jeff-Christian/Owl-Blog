@@ -25,13 +25,13 @@ const Login = () => {
   const [ConfirmPassword, setConfirmPassword] = useState("");
 
   // hook authentication
-  const { createUser, error: authError, loading } = useAuthentication();
+  const { login , createUser, error: authError, loading } = useAuthentication();
 
   // error
   const [error, setError] = useState("");
 
-  // method submit
-  const handleSubmit = async (e) => {
+  // method Register
+  const handleSubmitRegister = async (e) => {
     e.preventDefault();
 
     setError("");
@@ -51,6 +51,23 @@ const Login = () => {
 
     console.log(res);
   }
+
+  // method Login
+  const handleSubmitLogin = async (e) => {
+    e.preventDefault();
+
+    setError("");
+
+    const user = {
+      email,
+      password
+    }
+
+    const res = await login(user);
+
+    console.log(res);
+  }
+
 
   useEffect(() => {
     if (authError) {
@@ -72,10 +89,26 @@ const Login = () => {
             <button className={styles.frameBottom} onClick={() => setToggle(!toggle)}>Cadastrar</button>
           </div>
           <div className={styles.loginForm}>
-            <form>
-              <input type="email" name="email" id="email" placeholder='Email' required/>
-              <input type="password" name="password" id="password" placeholder='Senha' required/>
-              <input type="submit" value="Entrar" />
+            <form onSubmit={handleSubmitLogin}>
+              <input
+              type="email"
+              name="email"
+              required
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              />
+              <input
+              type="password"
+              name="password"
+              required
+              placeholder="Insira a senha"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+              />
+              {error && <p className={styles.error}>{error}</p>}
+              {!loading && <button>Entrar</button> }
+              {loading &&  <button disabled>Por favor, Aguarde</button>}
             </form>
           </div>
           {toggle && (
@@ -85,7 +118,7 @@ const Login = () => {
               <p>Sem complicações.</p>
               <button onClick={() => setToggle(!toggle)}><FontAwesomeIcon icon={faXmarkCircle} /></button>
             </div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmitRegister}>
               <input 
               type="text"
               name='displayName'

@@ -97,15 +97,20 @@
     padding-left: 20px;
 }
 
-.loginForm form input[type="submit"]{
+.loginForm form button{
+    height: 54px;
+    width: 364px;
+    border-radius: 12px;
     color: #E6E3E3;
     font-weight: 900;
     font-size: 1em;
     background: #8F5F30;
     cursor: pointer;
+    margin-left: 20px;
+    border: none;
 }
 
-.loginForm form input[type="submit"]:hover{
+.loginForm form button:hover{
     background-color: #cb4f11;
     color: #fff;
 }
