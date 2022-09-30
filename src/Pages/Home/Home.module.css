@@ -12,7 +12,7 @@
     height: 40px;
     width: 320px;
     border-radius: 100px;
-    padding-left: 30px;
+    padding-left: 15px;
 }
 
 .navBar input::placeholder{
@@ -24,11 +24,16 @@
     margin-right: 12em;
 }
 
-.inputSearch svg{
+.inputSearch button{
+    width: 40px;
+
+    padding: 6px;
+    border-radius: 0px 100px 100px 0px;
+    border: none;
+
     position: absolute;
-    left: 10px;
-    bottom: 11px;
-    color: black;
+    right: 1px;
+    bottom: 2px;
 }
 
 /* Field of new post */
@@ -102,4 +107,19 @@
 
 .userArea a:hover{
     color: #cb4f11;
+}
+
+
+/* Posts */
+
+.posts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 294px;
+
+    opacity: 0.93;
+    border-radius: 12px;
+
+    margin-bottom: 2em;
 }

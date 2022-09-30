@@ -1,7 +1,7 @@
 import styles from './Home.module.css';
 
 // routes
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 // Images
 import logoSocial from "../../images/logo-social.png";
@@ -21,8 +21,18 @@ import { useState } from 'react';
 
 const Home = () => {
 
-    // show and hide container of register user
-    const [toggle, setToggle] = useState(false);
+  // show and hide container of register user
+  const [toggle, setToggle] = useState(false);
+
+  // states search
+  const [query, setQuery] = useState("");
+
+  // receiving posts
+  const [posts] = useState([]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  }
 
   const { logout } = useAuthentication();
 
@@ -33,10 +43,14 @@ const Home = () => {
         <li>
           <img src={logoSocial} alt="logo social" className={styles.logo} />
         </li>
-        <li className={styles.inputSearch}>
-          <FontAwesomeIcon icon={faSearch} />
-          <input type="text" placeholder='Pesquisar posts' />
-        </li>
+        <form onSubmit={handleSubmit} className={styles.inputSearch}>
+          <input 
+          type="text" 
+          placeholder='Pesquisar posts'
+          onChange={(e) => setQuery(e.target.value)}
+          />
+          <button><FontAwesomeIcon icon={faSearch} /></button>
+        </form>
         <li className={styles.newPost} onClick={() => setToggle(!toggle)}>
           <FontAwesomeIcon icon={faPlus} />
           <span id={styles.tooltipText}>O quê você quer postar?</span>
@@ -60,8 +74,11 @@ const Home = () => {
 
     <main>
       <div className='container'>
-        <h1>Home</h1>
-        
+        <div className={styles.posts}>
+          {posts && posts.length === 0 && (
+            <p>Não foram encontrados posts :(</p>
+          )}
+        </div>
       </div>
     </main>
 

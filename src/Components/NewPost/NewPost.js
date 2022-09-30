@@ -71,7 +71,7 @@ const NewPost = () => {
     });
 
     // Redirect
-    navigate("/home");
+    navigate("/");
   }
 
   return (
