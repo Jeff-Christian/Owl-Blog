@@ -84,3 +84,10 @@
     
     border: none;
 }
+
+/* error */
+.error{
+    background: #E12D2D;
+    margin: 10px;
+    text-align: center;
+}

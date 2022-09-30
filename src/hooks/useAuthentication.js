@@ -1,5 +1,3 @@
-import { db } from '../firebase/config';
-
 import {
     getAuth,
     createUserWithEmailAndPassword,
@@ -33,7 +31,7 @@ export const useAuthentication = () => {
         checkIfIsCancelled();
 
         setLoading(true);
-        setError(null);
+        // setError(null);
 
         try {
             
@@ -48,7 +46,7 @@ export const useAuthentication = () => {
                 { displayName: data.displayName }
             )
 
-            setLoading(false);
+            // setLoading(false);
 
             return user;
 
@@ -58,7 +56,7 @@ export const useAuthentication = () => {
             console.log(error.message);
             console.log(typeof error.message);
 
-            let systemErrorMessage
+            let systemErrorMessage;
 
             if (error.message.includes("Password")) {
                 systemErrorMessage = "A senha precisa conter pelo menos 6 caracteres.";
@@ -68,11 +66,19 @@ export const useAuthentication = () => {
                 systemErrorMessage = "Ocorreu um erro, por favor retorne depois.";
             }
 
-            setLoading(false);
             setError(systemErrorMessage);
-            alert("Usuário cadastrado com sucesso");
         }
+
+        setLoading(false);
+        alert("Usuário cadastrado com sucesso");
     };
+
+    // Log Out - Sign out
+    const logout = () => {
+        checkIfIsCancelled();
+
+        signOut(auth);
+    }    
 
     // login - sign in
     const login = async(data) =>{
@@ -100,14 +106,6 @@ export const useAuthentication = () => {
 
     }
 
-
-    // Log Out - Sign out
-    const logout = () => {
-        checkIfIsCancelled();
-
-        signOut(auth);
-    }
-
     useEffect(() => {
         return () => setCancelled(true);
     }, []);
@@ -116,9 +114,9 @@ export const useAuthentication = () => {
         auth,
         createUser,
         error,
-        loading,
         logout,
         login,
+        loading,
     }
 
 }

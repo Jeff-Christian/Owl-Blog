@@ -3,7 +3,7 @@ import {useState, useEffect, useReducer} from "react";
 
 // Firebase
 import {db} from "../firebase/config";
-import { collection, addDoc, Timestamp, doc } from "firebase/firestore";
+import { collection, addDoc, Timestamp } from "firebase/firestore";
 
 const initialState = {
     loading: null,
@@ -11,7 +11,6 @@ const initialState = {
 }
 
 const insertReducer = (state, action) => {
-
     switch(action.type){
         case "LOADING":
             return {loading: true, error: null}
@@ -22,8 +21,6 @@ const insertReducer = (state, action) => {
         default:
             return state;
     }
-
-
 }
 
 export const useInsertDocument = (docCollection) => {
@@ -33,7 +30,7 @@ export const useInsertDocument = (docCollection) => {
     // Deal with memory leak
     const [cancelled, setCancelled] = useState(false);
 
-    const checkCancelVeforeDispatch = (action) => {
+    const checkCancelBeforeDispatch = (action) => {
         if (!cancelled) {
             dispatch(action)
         }
@@ -41,27 +38,27 @@ export const useInsertDocument = (docCollection) => {
     
     const insertDocument = async(document) => {
 
-        checkCancelVeforeDispatch({
+        checkCancelBeforeDispatch({
             type: "LOADING",
         })
 
         try {
 
-            const newDocument = {...document, createAt: Timestamp.now()}
+            const newDocument = {...document, createdAt: Timestamp.now()}
 
             const insertedDocument = await addDoc(
                 collection(db, docCollection),
                 newDocument
             )
 
-            checkCancelVeforeDispatch({
+            checkCancelBeforeDispatch({
                 type: "INSERTED_DOC",
                 payload: insertedDocument,
             })
 
         } catch (error) {
             
-            checkCancelVeforeDispatch({
+            checkCancelBeforeDispatch({
                 type: "ERROR",
                 payload: error.message,
             })
