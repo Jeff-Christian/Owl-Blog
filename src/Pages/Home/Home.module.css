@@ -116,10 +116,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 294px;
+    flex-direction: column;
 
     opacity: 0.93;
     border-radius: 12px;
-
+    
     margin-bottom: 2em;
 }

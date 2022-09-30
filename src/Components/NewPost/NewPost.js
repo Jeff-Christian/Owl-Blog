@@ -36,9 +36,10 @@ const NewPost = () => {
 
     // validate image Url
     try {
-      new URL(image)
+      new URL(image);
     } catch (error) {
-      setFormError("A imagem precisa ser uma URL.")
+      setFormError("A imagem precisa ser uma URL.");
+      return
     }
 
     // Create arr tags
@@ -50,9 +51,7 @@ const NewPost = () => {
       setFormError("Por favor, preencha todos os campos.");
     }
 
-    if (formError) {
-      return
-    }
+    if (formError) return;
 
     insertDocument({
       image,

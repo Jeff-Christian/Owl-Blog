@@ -14,10 +14,13 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 // Components
 import NewPost from '../../Components/NewPost/NewPost';
+import PostDetails from '../../Components/Post/PostDetails';
 
 // Hooks
 import { useAuthentication } from "../../hooks/useAuthentication";
 import { useState } from 'react';
+import {useFetchDocuments} from "../../hooks/useFetchDocuments";
+
 
 const Home = () => {
 
@@ -28,7 +31,7 @@ const Home = () => {
   const [query, setQuery] = useState("");
 
   // receiving posts
-  const [posts] = useState([]);
+  const {documents: posts, loading} = useFetchDocuments("posts");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -75,6 +78,12 @@ const Home = () => {
     <main>
       <div className='container'>
         <div className={styles.posts}>
+
+          { posts && posts.map((post) => 
+            <PostDetails key={post.id} post={post}></PostDetails>
+          )}
+
+
           {posts && posts.length === 0 && (
             <p>Não foram encontrados posts :(</p>
           )}
