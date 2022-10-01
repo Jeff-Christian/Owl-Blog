@@ -70,7 +70,6 @@ export const useAuthentication = () => {
         }
 
         setLoading(false);
-        alert("Usuário cadastrado com sucesso");
     };
 
     // Log Out - Sign out

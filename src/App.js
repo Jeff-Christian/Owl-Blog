@@ -12,6 +12,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 // Pages
 import Login from './Pages/Login/Login';
 import Home from './Pages/Home/Home';
+import Search from './Pages/Search/Search';
 
 // Components
 import Footer from "./Components/Footer/Footer";
@@ -50,7 +51,9 @@ function App() {
           <Routes>
             <Route path='/' element={!user ? <Login></Login> : <Navigate to='/home'/>}></Route>
             <Route path='/home' element={user ? <Home></Home> : <Navigate to='/'/>}></Route>
+
             <Route path='/*' element={<NotFound></NotFound>}></Route>
+            <Route path='/search' element={user ? <Search></Search> : <Navigate to='/'/>}></Route>
           </Routes>
           <Footer></Footer>
         </BrowserRouter>

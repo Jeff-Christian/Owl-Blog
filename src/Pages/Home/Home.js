@@ -29,12 +29,17 @@ const Home = () => {
 
   // states search
   const [query, setQuery] = useState("");
+  const navigate = useNavigate();
 
   // receiving posts
-  const {documents: posts, loading} = useFetchDocuments("posts");
+  const {documents: posts} = useFetchDocuments("posts");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (query) {
+      return navigate(`/search?q=${query}`)
+    }
   }
 
   const { logout } = useAuthentication();
@@ -69,11 +74,11 @@ const Home = () => {
       </ul>
     </nav>
 
-      {toggle && (
-        <div className='container'>
-          <NewPost></NewPost>
-        </div>
-      )}
+    {toggle && (
+      <div className='container'>
+        <NewPost></NewPost>
+      </div>
+    )}
 
     <main>
       <div className='container'>
