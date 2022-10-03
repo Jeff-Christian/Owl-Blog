@@ -8,12 +8,16 @@ import logoSocial from "../../images/logo-social.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
 
+// Components
+import PostDetails from "../../Components/Post/PostDetails";
+
 // routes
 import { Link } from 'react-router-dom';
 
 // Hooks
 import { useQuery } from "../../hooks/useQuery";
 import { useAuthentication } from "../../hooks/useAuthentication";
+import {useFetchDocuments} from "../../hooks/useFetchDocuments";
 
 const Search = () => {
 
@@ -21,6 +25,8 @@ const Search = () => {
 
     const query = useQuery();
     const search = query.get("q");
+
+    const {documents: posts} = useFetchDocuments("posts", search);
 
   return (
     <>
@@ -44,8 +50,24 @@ const Search = () => {
             <p>
                 {search}
             </p>
+
+            <div className="container">
+                <div className={styles.postsContainer}>
+                    {posts && posts.length === 0 && (
+                        <div className={styles.noPosts}>
+                            <p>Não foram encontradas publicações :(</p>
+                        </div>
+                    )}
+
+
+                    {posts && posts.map((post) => 
+                        <PostDetails key={post.id} post={post}></PostDetails>
+                    )}
+                </div>
+            </div>
+
         </div>
-        </div>
+    </div>
     </>
   )
 }

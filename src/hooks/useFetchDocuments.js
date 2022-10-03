@@ -38,7 +38,7 @@ export const useFetchDocuments = (
                 if (search) {
 
                     q = await query(collectionRef, 
-                        where("tags", "array-contains", 
+                        where("tagsArray", "array-contains", 
                         search), 
                         orderBy("createdAt", "desc")
                     );
