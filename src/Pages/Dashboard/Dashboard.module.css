@@ -1,0 +1,31 @@
+.logo{
+    width: 60%;
+}
+
+.logo:hover{
+    width: 65%;
+    transition: 0.4s;
+}
+
+.navBar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+.postContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* NO posts */
+.noPosts{
+    height: 61vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

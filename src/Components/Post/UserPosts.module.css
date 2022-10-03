@@ -13,14 +13,34 @@
 .user{
     display: flex;
     align-items: center;
+    justify-content: space-between;
+
     margin: 10px;
     margin-bottom: 1em;
+    padding: 10px;
+}
+
+.userDetails{
+    display: flex;
 }
 
 .user span svg{
     height: 40px;
     width: 40px;
     margin-right: 10px;
+}
+
+.dotsInput:hover{
+
+    background: #3a3b3c;
+    border-radius: 50%;
+
+    text-align: center;
+}
+
+.dots{
+    font-size: 1.7em;
+    cursor: pointer;
 }
 
 .content p{
