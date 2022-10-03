@@ -74,6 +74,7 @@ export const useFetchDocuments = (
 
     }, [
         docCollection,
+        documents,
         search,
         uid, 
         cancelled
