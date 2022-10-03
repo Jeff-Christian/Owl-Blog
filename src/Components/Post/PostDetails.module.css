@@ -46,14 +46,10 @@
 }
 
 .post a{
+    color: #e1f0e1;
     margin-left: 10px;
-    color: #8f5f30;
 }
 
 .post a:hover{
-    background: #e1f0e1;
-    color: #cb4f11;
-    border-radius: 5px;
-    padding: 5px;
-    transition: 0.4s
+    text-decoration: underline;
 }

@@ -17,6 +17,7 @@ import Search from './Pages/Search/Search';
 // Components
 import Footer from "./Components/Footer/Footer";
 import NotFound from "./Pages/Not Found/NotFound";
+import Post from './Components/Post/Post';
 
 // hooks
 import {useState, useEffect} from "react";
@@ -54,6 +55,7 @@ function App() {
 
             <Route path='/*' element={<NotFound></NotFound>}></Route>
             <Route path='/search' element={user ? <Search></Search> : <Navigate to='/'/>}></Route>
+            <Route path='/posts/:id' element={user ? <Post></Post> : <Navigate to='/'/>}></Route>
           </Routes>
           <Footer></Footer>
         </BrowserRouter>
