@@ -68,6 +68,7 @@ const Home = () => {
             <FontAwesomeIcon icon={faCircleUser} />
           </button>
           <ul className="dropdown-menu">
+            <li><Link to="/dashboard" className="dropdown-item">Perfil</Link></li>
             <li><Link onClick={logout} className="dropdown-item">Sair</Link></li>
           </ul>
         </div>

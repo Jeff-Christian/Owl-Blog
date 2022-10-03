@@ -13,6 +13,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import Login from './Pages/Login/Login';
 import Home from './Pages/Home/Home';
 import Search from './Pages/Search/Search';
+import Dashboard from './Pages/Dashboard/Dashboard';
 
 // Components
 import Footer from "./Components/Footer/Footer";
@@ -56,6 +57,7 @@ function App() {
             <Route path='/*' element={<NotFound></NotFound>}></Route>
             <Route path='/search' element={user ? <Search></Search> : <Navigate to='/'/>}></Route>
             <Route path='/posts/:id' element={user ? <Post></Post> : <Navigate to='/'/>}></Route>
+            <Route path='/dashboard' element={user ? <Dashboard></Dashboard> : <Navigate to='/'/>}></Route>
           </Routes>
           <Footer></Footer>
         </BrowserRouter>
