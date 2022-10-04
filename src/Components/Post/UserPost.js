@@ -33,7 +33,7 @@ const UserPost = ({post}) => {
                 </button>
                 <ul className="dropdown-menu">
                     <li>
-                        <Link to={`/posts/${post.id}`} id={styles.edit} className="dropdown-item"><FontAwesomeIcon className={styles.pen} icon={faPen}></FontAwesomeIcon>Editar publicação</Link>
+                        <Link to={`/posts/edit/${post.id}`} id={styles.edit} className="dropdown-item"><FontAwesomeIcon className={styles.pen} icon={faPen}></FontAwesomeIcon>Editar publicação</Link>
                     </li>
                     <li>
                         <Link 

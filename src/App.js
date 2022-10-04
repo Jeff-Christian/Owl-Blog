@@ -14,6 +14,7 @@ import Login from './Pages/Login/Login';
 import Home from './Pages/Home/Home';
 import Search from './Pages/Search/Search';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import EditPost from './Pages/EditPost/EditPost';
 
 // Components
 import Footer from "./Components/Footer/Footer";
@@ -58,6 +59,7 @@ function App() {
             <Route path='/search' element={user ? <Search></Search> : <Navigate to='/'/>}></Route>
             <Route path='/posts/:id' element={user ? <Post></Post> : <Navigate to='/'/>}></Route>
             <Route path='/dashboard' element={user ? <Dashboard></Dashboard> : <Navigate to='/'/>}></Route>
+            <Route path='/posts/edit/:id' element={user ? <EditPost></EditPost> : <Navigate to='/'/>}></Route>
           </Routes>
           <Footer></Footer>
         </BrowserRouter>
