@@ -46,7 +46,18 @@ const Dashboard = () => {
                   </div>
               </ul>
           </nav>
+{/* 
+          <div className="container">
+            <div className={styles.profileField}>
+                <FontAwesomeIcon icon={faCircleUser} />
 
+            </div>
+            <div className={styles.tablist}>
+                <span>Publicações</span>
+
+            </div>
+          </div> */}
+ 
           {posts && posts.length === 0 ? (
             <div className="container">
               <div className={styles.noPosts}>

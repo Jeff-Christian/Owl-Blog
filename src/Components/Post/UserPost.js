@@ -26,17 +26,17 @@ const UserPost = ({post}) => {
             </div>
 
             <div className="btn-group dropstart">
-                <button type="button" className="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <button type="button" id={styles.btnDots} className="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                     <FontAwesomeIcon className={styles.dots} icon={faEllipsisV} />
                 </button>
                 <ul className="dropdown-menu">
                     <li>
-                        <Link to={`/posts/${post.id}`} className="dropdown-item">Editar publicação</Link>
+                        <Link to={`/posts/${post.id}`} id={styles.edit} className="dropdown-item">Editar publicação</Link>
                     </li>
                     <li>
                         <Link 
                         onClick={() => deleteDocument(post.id)} 
-                        to={`/posts/${post.id}`} className="dropdown-item">Excluir Post</Link>
+                        to={`/posts/${post.id}`} id={styles.delete} className="dropdown-item">Excluir Post</Link>
                     </li>
                 </ul>
                 </div>

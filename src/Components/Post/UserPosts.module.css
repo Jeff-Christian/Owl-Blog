@@ -30,6 +30,13 @@
     margin-right: 10px;
 }
 
+/* Dots */
+
+#btnDots{
+    border: none;
+    color: #e1f0e1;
+}
+
 .dotsInput:hover{
 
     background: #3a3b3c;
@@ -41,6 +48,30 @@
 .dots{
     font-size: 1.7em;
     cursor: pointer;
+}
+
+/* Input dots */
+
+#edit{
+    color: #242526;
+}
+
+#edit:hover{
+    background: #565e64;
+    color: #e1f0e1;
+
+    border-radius: 5px;
+}
+
+#delete{
+    color: #242526;
+}
+
+#delete:hover{
+    background: red;
+    color: #e1f0e1;
+
+    border-radius: 5px;
 }
 
 .content p{

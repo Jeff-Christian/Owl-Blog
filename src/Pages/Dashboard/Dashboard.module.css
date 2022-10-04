@@ -21,6 +21,20 @@
     justify-content: center;
 }
 
+/* User Profile */
+.profileField{
+    height: 259px;
+
+    background: #2374E1;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.tablist{
+    height: 61px;
+
+    background: #FFFFFF;
+}
+
 /* NO posts */
 .noPosts{
     height: 61vh;
