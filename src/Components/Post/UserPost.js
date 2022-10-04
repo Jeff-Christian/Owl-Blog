@@ -10,13 +10,13 @@ import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
+// Hooks
+import { useDeleteDocument } from "../../hooks/useDeleteDocument";
+
 const UserPost = ({post}) => {
 
-    const deleteDocument = (id) => {
-        console.log("tentanto deletar publicação");
-    }
+    const {deleteDocument} = useDeleteDocument("posts");
 
-    
   return (
     <>
     <div className={styles.post}>
@@ -38,11 +38,11 @@ const UserPost = ({post}) => {
                     <li>
                         <Link 
                         onClick={() => deleteDocument(post.id)} 
-                        to={`/posts/${post.id}`} id={styles.delete} className="dropdown-item"><FontAwesomeIcon className={styles.trash} icon={faTrash}></FontAwesomeIcon>Excluir Post</Link>
+                        id={styles.delete} className="dropdown-item"><FontAwesomeIcon className={styles.trash} icon={faTrash}></FontAwesomeIcon>Excluir Post</Link>
                     </li>
                 </ul>
-                </div>
             </div>
+        </div>
         <div className={styles.content}>
             <p>{post.body}</p>
         </div>

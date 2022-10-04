@@ -46,17 +46,6 @@ const Dashboard = () => {
                   </div>
               </ul>
           </nav>
-{/* 
-          <div className="container">
-            <div className={styles.profileField}>
-                <FontAwesomeIcon icon={faCircleUser} />
-
-            </div>
-            <div className={styles.tablist}>
-                <span>Publicações</span>
-
-            </div>
-          </div> */}
  
           {posts && posts.length === 0 ? (
             <div className="container">
@@ -69,7 +58,9 @@ const Dashboard = () => {
             <>
             <div className={styles.postContainer}>
               {posts && posts.map((post) => 
+                <>
                 <UserPost key={post.id} post={post}></UserPost>
+                </>
               )}
             </div>
             </>

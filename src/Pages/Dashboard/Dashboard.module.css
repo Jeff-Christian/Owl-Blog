@@ -35,6 +35,18 @@
     background: #FFFFFF;
 }
 
+/* Confirm Delete */
+.confirmDelete{
+    width: 558px;
+    height: 193px;
+
+    position: absolute;
+
+    background: #242526;
+    border-radius: 12px;
+}
+
+
 /* NO posts */
 .noPosts{
     height: 61vh;
