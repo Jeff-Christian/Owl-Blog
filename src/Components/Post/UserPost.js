@@ -4,9 +4,11 @@ import styles from "./UserPosts.module.css";
 import { Link } from "react-router-dom";
 
 // Icons
-import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
+import { faPen } from "@fortawesome/free-solid-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const UserPost = ({post}) => {
 
@@ -31,12 +33,12 @@ const UserPost = ({post}) => {
                 </button>
                 <ul className="dropdown-menu">
                     <li>
-                        <Link to={`/posts/${post.id}`} id={styles.edit} className="dropdown-item">Editar publicação</Link>
+                        <Link to={`/posts/${post.id}`} id={styles.edit} className="dropdown-item"><FontAwesomeIcon className={styles.pen} icon={faPen}></FontAwesomeIcon>Editar publicação</Link>
                     </li>
                     <li>
                         <Link 
                         onClick={() => deleteDocument(post.id)} 
-                        to={`/posts/${post.id}`} id={styles.delete} className="dropdown-item">Excluir Post</Link>
+                        to={`/posts/${post.id}`} id={styles.delete} className="dropdown-item"><FontAwesomeIcon className={styles.trash} icon={faTrash}></FontAwesomeIcon>Excluir Post</Link>
                     </li>
                 </ul>
                 </div>

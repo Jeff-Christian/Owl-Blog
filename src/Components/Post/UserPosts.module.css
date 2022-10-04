@@ -63,6 +63,10 @@
     border-radius: 5px;
 }
 
+.pen{
+    margin-right: 10px;
+}
+
 #delete{
     color: #242526;
 }
@@ -72,6 +76,10 @@
     color: #e1f0e1;
 
     border-radius: 5px;
+}
+
+.trash{
+    margin-right: 10px;
 }
 
 .content p{
