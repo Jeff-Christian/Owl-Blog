@@ -4,9 +4,11 @@ import styles from "./EditPost.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImage } from "@fortawesome/free-regular-svg-icons";
 import { faTags } from "@fortawesome/free-solid-svg-icons";
+import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { faXmarkCircle } from "@fortawesome/free-regular-svg-icons";
 
 // Routes
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 
 // Hooks
 import { useEffect, useState } from "react";
@@ -95,6 +97,7 @@ const EditPost = () => {
   return (
     <div className={styles.createPost}>
       <h3>Editar publicação </h3>
+      <Link to="/dashboard"><FontAwesomeIcon className={styles.cancel} icon={faXmarkCircle}/></Link>
       {post && (
         <>
           <form onSubmit={handleSubmit}>
@@ -120,8 +123,11 @@ const EditPost = () => {
             />
             </div>
 
-            <div>
-              <p>Preview</p>
+            <div className={styles.preview}>
+              <p>Preview <FontAwesomeIcon icon={faCaretDown}></FontAwesomeIcon></p>
+              <div className={styles.imagePreview}>
+                <img src={post.image} alt={post.body} />
+              </div>
             </div>
 
             <div className={styles.fieldTags}>
@@ -138,7 +144,7 @@ const EditPost = () => {
 
             {response.error && <p className={styles.error}>{response.error}</p>}
             {formError && <p className={styles.error}>{formError}</p>}
-            {!response.loading && <button>Editar</button> }
+            {!response.loading && <button>Salvar</button> }
             {response.loading &&  <button disabled>Por favor, Aguarde</button>}
 
           </form>
