@@ -12,7 +12,7 @@ import { useNavigate, useParams, Link } from "react-router-dom";
 
 // Hooks
 import { useEffect, useState } from "react";
-import {useInsertDocument} from "../../hooks/useInsertDocument";
+import { useUpdateDocument } from "../../hooks/useUpdateDocument";
 import {useFetchDocument} from "../../hooks/useFetchDocument";
 
 // Context
@@ -49,7 +49,7 @@ const EditPost = () => {
   const {user} = useAuthValue();
 
   // Insert document
-  const {insertDocument, response} = useInsertDocument("posts");
+  const {updateDocument, response} = useUpdateDocument("posts");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -74,13 +74,15 @@ const EditPost = () => {
 
     if (formError) return;
 
-    insertDocument({
+    const data = {
       image,
       body,
       tagsArray,
       uid: user.uid,
       createdBy: user.displayName
-    })
+    }
+
+    updateDocument(id, data);
 
     console.log({
       image,
@@ -91,7 +93,7 @@ const EditPost = () => {
     });
 
     // Redirect
-    navigate("/");
+    navigate("/dashboard");
   }
 
   return (
@@ -124,7 +126,7 @@ const EditPost = () => {
             </div>
 
             <div className={styles.preview}>
-              <p>Preview <FontAwesomeIcon icon={faCaretDown}></FontAwesomeIcon></p>
+              <p>Preview da imagem atual <FontAwesomeIcon icon={faCaretDown}></FontAwesomeIcon></p>
               <div className={styles.imagePreview}>
                 <img src={post.image} alt={post.body} />
               </div>
