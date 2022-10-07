@@ -84,6 +84,7 @@
     border-radius: 12px;
     border: none;
     margin: 20px;
+    padding-left: 20px;
 }
 
 .loginForm form input[type="email"]{
@@ -95,6 +96,19 @@
 .loginForm form input[type="password"]{
     color: #8F5F30;
     padding-left: 20px;
+}
+
+.passwordField{
+    position: relative;
+}
+
+.passwordField span{
+    position: absolute;
+    right: 40px;
+    color: black;
+    bottom: 33px;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 .loginForm form button{
@@ -196,6 +210,19 @@
     padding: 10px;
     background: #F5F6F7;
     border: 1px solid;
+}
+
+.passwordFieldRegister{
+    position: relative;
+}
+
+.passwordFieldRegister span{
+    position: absolute;
+    right: 40px;
+    color: black;
+    bottom: 22px;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 .registerFrame form button{

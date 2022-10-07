@@ -4,6 +4,8 @@ import styles from './Login.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { faXmarkCircle } from '@fortawesome/free-solid-svg-icons';
+import { faEye } from '@fortawesome/free-solid-svg-icons';
+import { faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 // Images
 import logoSocial from "../../images/logo-social.png";
@@ -17,6 +19,50 @@ const Login = () => {
 
   // show and hide container of register user
   const [toggle, setToggle] = useState(false);
+
+  // Show/Hide Password
+  const [type, setType] = useState("password");
+  const [icon, setIcon] = useState(faEyeSlash);
+
+  const handleToggle = () => {
+    if (type === "password") {
+      setIcon(faEye);
+      setType("text");
+    } else {
+      setIcon(faEyeSlash);
+      setType("password");
+    }
+  }
+
+  // Show/Hide Password Register Fieldset
+  const [typeRegister, setTypeRegister] = useState("password");
+  const [iconRegister, setIconRegister] = useState(faEyeSlash);
+
+  const handleToggleRegister = () => {
+    if (typeRegister === "password") {
+      setIconRegister(faEye);
+      setTypeRegister("text");
+    } else {
+      setIconRegister(faEyeSlash);
+      setTypeRegister("password");
+    }
+  }
+
+  
+  // Show/Hide Password Register Fieldset
+  const [typeConfirm, setTypeConfirm] = useState("password");
+  const [iconConfirm, setIconConfirm] = useState(faEyeSlash);
+
+  const handleToggleConfirm = () => {
+    if (typeConfirm === "password") {
+      setIconConfirm(faEye);
+      setTypeConfirm("text");
+    } else {
+      setIconConfirm(faEyeSlash);
+      setTypeConfirm("password");
+    }
+  }
+
 
   // form control
   const [displayName, setDisplayName] = useState("");
@@ -100,14 +146,17 @@ const Login = () => {
               onChange={(e) => setEmail(e.target.value)}
               value={email}
               />
+              <div className={styles.passwordField}>
               <input
-              type="password"
+              type={type}
               name="password"
               required
               placeholder="Insira a senha"
               onChange={(e) => setPassword(e.target.value)}
               value={password}
               />
+              <span onClick={handleToggle}><FontAwesomeIcon icon={icon}/></span>
+              </div>
               {error && <p className={styles.error}>{error}</p>}
               {!loading && <button>Entrar</button> }
               {loading &&  <button disabled>Por favor, Aguarde</button>}
@@ -137,22 +186,31 @@ const Login = () => {
               onChange={(e) => setEmail(e.target.value)}
               required
               />
+
+              <div className={styles.passwordFieldRegister}>
               <input 
-              type="password"
+              type={typeRegister}
               name='password'
               placeholder='Nova Senha' 
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
               />
+              <span onClick={handleToggleRegister}><FontAwesomeIcon icon={iconRegister}/></span>
+              </div>
+
+              <div className={styles.passwordFieldRegister}>
               <input 
-              type="password"
+              type={typeConfirm}
               name='ConfirmPassword'
               placeholder='Confirme a sua senha' 
               value={ConfirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
               />
+              <span onClick={handleToggleConfirm}><FontAwesomeIcon icon={iconConfirm}/></span>
+              </div>
+
               {error && <p className={styles.error}>{error}</p>}
               {!loading && <button>Cadastre-se</button> }
               {loading &&  <button disabled>Por favor, Aguarde</button>}
