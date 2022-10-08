@@ -130,7 +130,7 @@ const Login = () => {
         </ul>
       </nav>
 
-      <main  className='container'>
+      <main  className='container main'>
         <div className={styles.register}>
           <div className={styles.newRegister}>
             <FontAwesomeIcon icon={faUserPlus} />
