@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Owl-Blog/static/css/main.7ef9abae.css",
+    "main.js": "/Owl-Blog/static/js/main.6a05477b.js",
+    "static/js/787.f3c46cb8.chunk.js": "/Owl-Blog/static/js/787.f3c46cb8.chunk.js",
+    "index.html": "/Owl-Blog/index.html",
+    "main.7ef9abae.css.map": "/Owl-Blog/static/css/main.7ef9abae.css.map",
+    "main.6a05477b.js.map": "/Owl-Blog/static/js/main.6a05477b.js.map",
+    "787.f3c46cb8.chunk.js.map": "/Owl-Blog/static/js/787.f3c46cb8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7ef9abae.css",
+    "static/js/main.6a05477b.js"
+  ]
+}
