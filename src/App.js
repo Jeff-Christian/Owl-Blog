@@ -1,7 +1,7 @@
 import './App.css';
 
 // Router
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter as BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 // Context
 import { AuthProvider } from './context/AuthContext';
