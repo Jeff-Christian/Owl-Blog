@@ -63,7 +63,7 @@ const Home = () => {
           <FontAwesomeIcon icon={faPlus} />
           <span id={styles.tooltipText}>O quê você quer postar?</span>
         </li>
-        <div className="dropdown">
+        <div className="dropdown" id={styles.dropdown}>
           <button className="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <FontAwesomeIcon icon={faCircleUser} />
           </button>
@@ -81,21 +81,20 @@ const Home = () => {
       </div>
     )}
 
-    <main>
-      <div className='container'>
-        <div className={styles.posts}>
+    <div className='container'>
+      <div className={styles.posts}>
 
-          { posts && posts.map((post) => 
-            <PostDetails key={post.id} post={post}></PostDetails>
-          )}
+        { posts && posts.map((post) => 
+          <PostDetails key={post.id} post={post}></PostDetails>
+        )}
 
 
-          {posts && posts.length === 0 && (
-            <p>Não foram encontrados posts :(</p>
-          )}
-        </div>
+        {posts && posts.length === 0 && (
+          <p>Não foram encontrados posts :(</p>
+        )}
       </div>
-    </main>
+    </div>
+
 
     </>
   )

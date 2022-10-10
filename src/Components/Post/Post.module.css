@@ -87,3 +87,59 @@
 .desc{
     padding: 20px;
 }
+
+@media only screen and (max-width: 768px){
+    .frameComments{
+        width: 200px;
+        height: 580px;
+    }
+
+    .profile{
+        width: 200px;
+        height: 180px;
+    }
+}
+
+@media only screen and (max-width: 425px){
+    .main{
+        height: 140vh;
+    }
+
+    .postContainer{
+        flex-direction: column;
+    }
+
+    .frameImage{
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .escField img{
+        width: 4em;
+    }
+
+    .image{
+        width: 100%;
+        height: 100%;
+    }
+
+    .image img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .frameComments{
+        width: 100%;
+        height: 134px;
+    }
+
+    .profile{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 320px){
+    .desc p{
+        font-size: 12px;
+    }
+}

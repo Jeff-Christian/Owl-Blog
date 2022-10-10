@@ -25,38 +25,40 @@ const Post = () => {
     <div className='container'>
       {post && (
         <>
-        <div className={styles.postContainer}>
+          <main className={styles.main}>
+          <div className={styles.postContainer}>
 
-          <div className={styles.frameImage}>
+            <div className={styles.frameImage}>
 
-            <div className={styles.escField}>
-              <Link to="/home"><FontAwesomeIcon icon={faXmark}/></Link>
-              <img src={icon} alt="logo social media" />
-            </div>
-
-            <div className={styles.image}>
-              <img src={post.image} alt={post.body} />
-            </div>
-          </div>
-
-          <div className={styles.frameComments}>
-
-            <div className={styles.profile}>
-
-              <div className={styles.user}>
-                <span><FontAwesomeIcon icon={faUserCircle}></FontAwesomeIcon></span>
-                <p>{post.createdBy}</p>
+              <div className={styles.escField}>
+                <Link to="/home"><FontAwesomeIcon icon={faXmark}/></Link>
+                <img src={icon} alt="logo social media" />
               </div>
 
-              <div className={styles.desc}>
-                <p>{post.body}</p>
+              <div className={styles.image}>
+                <img src={post.image} alt={post.body} />
+              </div>
+            </div>
+
+            <div className={styles.frameComments}>
+
+              <div className={styles.profile}>
+
+                <div className={styles.user}>
+                  <span><FontAwesomeIcon icon={faUserCircle}></FontAwesomeIcon></span>
+                  <p>{post.createdBy}</p>
+                </div>
+
+                <div className={styles.desc}>
+                  <p>{post.body}</p>
+                </div>
+
               </div>
 
             </div>
 
           </div>
-
-        </div>
+        </main>
         </>
       )}
     </div>

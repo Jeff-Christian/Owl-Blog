@@ -97,63 +97,65 @@ const EditPost = () => {
   }
 
   return (
-    <div className={styles.createPost}>
-      <h3>Editar publicação </h3>
-      <Link to="/dashboard"><FontAwesomeIcon className={styles.cancel} icon={faXmarkCircle}/></Link>
-      {post && (
-        <>
-          <form onSubmit={handleSubmit}>
+    <main className={styles.main}>
+      <div className={styles.createPost}>
+        <h3>Editar publicação </h3>
+        <Link to="/dashboard"><FontAwesomeIcon className={styles.cancel} icon={faXmarkCircle}/></Link>
+        {post && (
+          <>
+            <form onSubmit={handleSubmit}>
 
-            <textarea 
-            name="body" 
-            id="body" 
-            placeholder="No quê você está pensando?"
-            onChange={(e) => setBody(e.target.value)}
-            value={body}
-            required
-            ></textarea>
+              <textarea 
+              name="body" 
+              id="body" 
+              placeholder="No quê você está pensando?"
+              onChange={(e) => setBody(e.target.value)}
+              value={body}
+              required
+              ></textarea>
 
-            <div className={styles.fieldImage}>
-            <FontAwesomeIcon icon={faImage}></FontAwesomeIcon>
-            <input 
-            type="text" 
-            name="image"
-            required
-            placeholder="Insira a URL da imagem"
-            onChange={(e) => setImage(e.target.value)}
-            value={image}
-            />
-            </div>
-
-            <div className={styles.preview}>
-              <p>Preview da imagem atual <FontAwesomeIcon icon={faCaretDown}></FontAwesomeIcon></p>
-              <div className={styles.imagePreview}>
-                <img src={post.image} alt={post.body} />
+              <div className={styles.fieldImage}>
+              <FontAwesomeIcon icon={faImage}></FontAwesomeIcon>
+              <input 
+              type="text" 
+              name="image"
+              required
+              placeholder="Insira a URL da imagem"
+              onChange={(e) => setImage(e.target.value)}
+              value={image}
+              />
               </div>
-            </div>
 
-            <div className={styles.fieldTags}>
-            <FontAwesomeIcon icon={faTags}></FontAwesomeIcon>
-            <input 
-            type="text" 
-            name="tags"
-            required
-            placeholder="Insira as tags separadas por vírgulas"
-            onChange={(e) => setTags(e.target.value)}
-            value={tags}
-            />
-            </div>
+              <div className={styles.preview}>
+                <p>Preview da imagem atual <FontAwesomeIcon icon={faCaretDown}></FontAwesomeIcon></p>
+                <div className={styles.imagePreview}>
+                  <img src={post.image} alt={post.body} />
+                </div>
+              </div>
 
-            {response.error && <p className={styles.error}>{response.error}</p>}
-            {formError && <p className={styles.error}>{formError}</p>}
-            {!response.loading && <button>Salvar</button> }
-            {response.loading &&  <button disabled>Por favor, Aguarde</button>}
+              <div className={styles.fieldTags}>
+              <FontAwesomeIcon icon={faTags}></FontAwesomeIcon>
+              <input 
+              type="text" 
+              name="tags"
+              required
+              placeholder="Insira as tags separadas por vírgulas"
+              onChange={(e) => setTags(e.target.value)}
+              value={tags}
+              />
+              </div>
 
-          </form>
-        </>
-      )}
+              {response.error && <p className={styles.error}>{response.error}</p>}
+              {formError && <p className={styles.error}>{formError}</p>}
+              {!response.loading && <button>Salvar</button> }
+              {response.loading &&  <button disabled>Por favor, Aguarde</button>}
 
-    </div>
+            </form>
+          </>
+        )}
+
+      </div>
+    </main>
   )
 }
 

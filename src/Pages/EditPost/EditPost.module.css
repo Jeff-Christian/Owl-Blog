@@ -1,5 +1,9 @@
+.main{
+    display: flex;
+    align-items: center;
+}
+
 .createPost{
-    width: 70%;
     height: 500px;
 
     position: relative;
@@ -16,7 +20,8 @@
     margin-right: auto;
     padding: 15px;
 
-    overflow: auto;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-y: scroll; /* Add vertical scrollbar */
 }
 
 .cancel{
@@ -127,4 +132,55 @@
     background: #E12D2D;
     margin: 10px;
     text-align: center;
+}
+
+@media only screen and (max-width: 768px){
+    .createPost{
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 425px){
+    
+    .cancel{
+        right: 19px;
+        top: 12px;
+    }
+    
+    .createPost form{
+        width: 100%;
+    }
+
+    .createPost form textarea{
+        width: 90%;
+    }
+
+    .fieldImage{
+        display: flex;
+        margin: 1em;
+    }
+
+    .fieldTags{
+        display: flex;
+        margin: 1em;
+    }
+
+    .createPost form button{
+        width: 100%;
+        margin: 0;
+    }
+
+}
+
+
+@media only screen and (max-width: 375px){
+    .createPost form input{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 320px){
+    .createPost h3{
+        font-size: 1em;
+    }
 }

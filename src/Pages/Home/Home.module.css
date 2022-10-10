@@ -123,3 +123,80 @@
     
     margin-bottom: 2em;
 }
+
+/* RESPONSIVO */
+
+@media only screen and (max-width: 1024px){
+ 
+    #dropdown{
+        margin-left: 40px;
+    }
+
+    .newPost svg{
+        right: 12px;
+    }
+
+    #tooltipText{
+        font-size: 10px;
+    }
+
+}
+
+@media only screen and (max-width: 768px){
+ 
+    .logo{
+        width: 5em;
+        margin-right: 2em;
+    }
+
+    .inputSearch{
+        margin-right: 3em;
+    }
+
+    .newPost{
+        width: 40px;
+        height: 40px;
+    }
+
+    .newPost svg{
+        right: 10px;
+        bottom: 8px;
+    }
+
+    #tooltipText{
+        padding: 5px 5px;
+    }
+}
+
+@media only screen and (max-width: 425px){
+ 
+    .navBar{
+        flex-direction: column;
+    }
+
+    .navBar li{
+        margin: 20px;
+    }
+
+    .logo{
+        margin: 0;
+    }
+
+    .inputSearch{
+        margin: 0;
+    }
+
+    #dropdown{
+        margin-left: 15px;
+    }
+
+    .newPost svg{
+        right: 9px;
+    }
+}
+
+@media only screen and (max-width: 375px){
+    .inputSearch input{
+        width: 100%;
+    }
+}

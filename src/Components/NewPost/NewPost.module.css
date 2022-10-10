@@ -91,3 +91,41 @@
     margin: 10px;
     text-align: center;
 }
+
+/* RESPONSIVO */
+
+@media only screen and (max-width: 425px){
+    
+    .createPost form{
+        width: 100%;
+    }
+
+    .createPost form textarea{
+        margin: 0;
+        width: 100%;
+    }
+
+    .createPost form input{
+        width: 100%;
+    }
+
+    .createPost form input::placeholder{
+        font-size: 10px;
+    }
+
+    .fieldImage{
+        margin: 10px;
+        display: flex;
+    }
+
+    .fieldTags{
+        margin: 10px;
+        display: flex;
+    }
+
+    .createPost form button{
+        width: 100%;
+        margin: 0;
+    }
+    
+}

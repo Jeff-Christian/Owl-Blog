@@ -53,3 +53,17 @@
 .post a:hover{
     text-decoration: underline;
 }
+
+/* RESPONSIVO */
+
+@media only screen and (max-width: 425px){
+    
+    .post{
+        width: 90%;
+    }
+
+    .tags p{
+        font-size: 12px;
+    }
+    
+}
