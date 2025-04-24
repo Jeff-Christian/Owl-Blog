@@ -22,9 +22,7 @@ Aplicação full stack de blog com autenticação, cadastro e gerenciamento de p
 ## 🛠️ Como rodar o projeto
 
 1. Clone este repositório
-2. Instale as dependências:
-```bash
-npm install
+2. Instale as dependências
 
 📎 Link úteis
 
